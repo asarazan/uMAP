@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
 	compileSdkVersion 21
@@ -18,13 +19,12 @@ android {
 		}
 	}
 	sourceSets {
-		main {
-			java.srcDirs = ['src/main/java', 'src/main/java/com/idiogram/umap/collections', 'src/main/java/com/idiogram/umap/utils', 'src/main/java/com/idiogram/umap/activities', 'src/main/java/com/idiogram/umap/ui', 'src/main/java/com/idiogram/umap/ui/activity', 'src/main/java/com/idiogram/umap/ui/actionbar', 'src/main/java/com/idiogram/umap/ui/fragment', 'src/main/java/com/idiogram/umap/ui/list', 'src/main/java/com/idiogram/umap/ui/dialog', 'src/main/java/com/idiogram/umap/ui/cart']
-		}
+        main.java.srcDirs += 'src/main/kotlin'
 	}
 }
 
 dependencies {
 	compile fileTree(dir: 'libs', include: ['*.jar'])
 	compile 'com.android.support:appcompat-v7:21.0.3'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin"
 }
